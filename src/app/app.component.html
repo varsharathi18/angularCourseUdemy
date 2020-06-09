@@ -1,11 +1,23 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <h3 align="center">I am in AppComponent!</h3>
+      <h3 align="center" style="color: darkblue">I am in AppComponent!</h3>
       <hr>
-      <app-servers></app-servers>
-     <!-- <div app-servers></div>-->
-      <!--<div class="app-servers"></div>-->
-    </div>
+      <!--<app-servers></app-servers>-->
+      <!-- <button class="btn btn-primary" (click)="showLine = !showLine">Display Details</button>-->
+      <button class="btn btn-primary" (click)="onDisplay()">Display Details</button>
+      <hr>
+      <p *ngIf="showLine">My Secret password</p>
+      <div
+        *ngFor="let count of counts"
+        [ngStyle]="{backgroundColor: count >= 5 ? 'blue' : 'transparent'}"
+        [ngClass]="{'white-text': count >= 5 }"
+      >{{ count }}</div>
+     <!-- <div
+        *ngFor="let count of counts; let i = index"
+        [ngStyle]="{backgroundColor: i >= 4 ? 'blue' : 'transparent'}"
+        [ngClass]="{'white-text': i >= 4 }"
+      >{{ count }}</div>-->
+      </div>
   </div>
 </div>
